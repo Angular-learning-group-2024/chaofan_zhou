@@ -1,0 +1,22 @@
+<mat-dialog-content>
+  <div class="details-dialog">
+    <mat-icon class="icon-close" fontIcon="close" (click)="close()" />
+    <div class="left-panel"></div>
+    <div class="right-panel">
+      <div class="topic-container">
+        <h2>title</h2>
+        <div class="article">
+          <p>222</p>
+          <p>222</p>
+          <p>33333</p>
+          <p>444</p>
+        </div>
+        <user-location [date]="1709199456149" region="Chengdu" />
+      </div>
+      <div class="comment-container">
+        <p>Total: 1000 comments</p>
+        <user-comment-list />
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>

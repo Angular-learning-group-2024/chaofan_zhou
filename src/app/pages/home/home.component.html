@@ -1,18 +1,25 @@
 <div class="home-container">
   <div class="list-container">
-    <div class="list-item" *ngFor="let item of (itemList$ | async)">
-      <img class="banner" [src]="item?.photos![0]">
+    <div
+      class="list-item"
+      *ngFor="let item of itemList$ | async"
+      (click)="checkDetails()"
+    >
+      <img class="banner" [src]="(item?.photos)![0]" />
       <div class="footer">
-        <p class="title">{{item.name}}</p>
+        <p class="title">{{ item.name }}</p>
         <div class="card-info">
-          <img [src]="item?.avatar">
-          <span>{{item.nickname}}</span>
+          <img [src]="item?.avatar" />
+          <span>{{ item.nickname }}</span>
           <div class="star">
-            <mat-icon *ngIf="item.favorite; else notFavorite" fontIcon="favorite"></mat-icon>
+            <mat-icon
+              *ngIf="item.favorite; else notFavorite"
+              fontIcon="favorite"
+            ></mat-icon>
             <ng-template #notFavorite>
               <mat-icon fontIcon="favorite_border"></mat-icon>
             </ng-template>
-            <span>{{item.starCount}}</span>
+            <span>{{ item.starCount }}</span>
           </div>
         </div>
       </div>

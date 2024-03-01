@@ -1,0 +1,29 @@
+.floor-owner {
+  display: flex;
+  justify-content: center;
+
+  .right {
+    .floor-owner {
+      margin-top: 7px;
+    }
+  }
+
+  @mixin left-layout($cube) {
+    width: $cube;
+    height: $cube;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  &.default {
+    .left {
+      @include left-layout(40px)
+    }
+  }
+
+  &.small {
+    .left {
+      @include left-layout(20px)
+    }
+  }
+}
