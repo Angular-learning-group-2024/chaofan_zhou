@@ -1,1 +1,11 @@
-<p>swiper works!</p>
+<div class="swiper-container">
+  <div
+    class="image-container"
+    *ngFor="let img of imageList; let i = index"
+    [style.transform]="'translateX(' + (-currentIndex * 100) + '%)'"
+  >
+    <img class="img-item" [src]="img" />
+  </div>
+  <mat-icon class="icon-left" fontIcon="chevron_left" (click)="prevImg()" />
+  <mat-icon class="icon-right" fontIcon="chevron_right" (click)="nextImg()" />
+</div>

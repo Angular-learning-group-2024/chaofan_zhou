@@ -1,5 +1,6 @@
 .details-dialog {
   position: relative;
+  height: 100%;
 
   .icon-close {
     position: fixed;
@@ -24,6 +25,7 @@
 
   .right-panel {
     display: inline-block;
+    vertical-align: top;
     width: 300px;
     box-sizing: border-box;
     padding: 0 20px;

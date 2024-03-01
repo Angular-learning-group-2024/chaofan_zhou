@@ -6,6 +6,7 @@ import {
   MatDialogContent,
   MatDialogClose,
 } from '@angular/material/dialog';
+import { SwiperComponent } from '../../../components/swiper/swiper.component';
 import { UserLocationComponent } from '../../../components/user-location/user-location.component';
 import { UserCommentListComponent } from '../../../components/user-comment/user-comment.component';
 
@@ -13,6 +14,7 @@ import { UserCommentListComponent } from '../../../components/user-comment/user-
   selector: 'details-dialog',
   standalone: true,
   imports: [
+    SwiperComponent,
     MatDialogContent,
     MatDialogClose,
     MatIconModule,
