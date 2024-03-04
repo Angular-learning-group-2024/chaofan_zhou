@@ -17,10 +17,18 @@ export class SwiperComponent {
   currentIndex = 0;
 
   nextImg() {
-    this.currentIndex += 1
+    if (this.currentIndex === this.imageList.length - 1) {
+      this.currentIndex = 0
+    } else {
+      this.currentIndex += 1
+    }
   }
 
   prevImg() {
-    this.currentIndex -= 1
+    if (this.currentIndex === 0) {
+      this.currentIndex = this.imageList.length - 1
+    } else {
+      this.currentIndex -= 1
+    }
   }
 }
