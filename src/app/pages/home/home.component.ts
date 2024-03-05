@@ -17,6 +17,7 @@ interface Item {
   avatar: string;
   starCount: number;
   favorite: boolean;
+  reGenerated: boolean;
 }
 @Component({
   selector: 'app-home',

@@ -1,0 +1,52 @@
+<div class="review-details">
+  <div class="left-panel">
+    <div class="swiper-wrapper">
+      <swiper-component
+        class="swiper-component"
+        [imageList]="[
+          'https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg',
+          'https://angular.io/assets/images/tutorials/faa/phil-hearing-IYfp2Ixe9nM-unsplash.jpg',
+          'https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg'
+        ]"
+      />
+    </div>
+  </div>
+  <div class="right-panel">
+    <div class="detail-component">
+      <h2>title title title title title title title title</h2>
+      <p>
+        This is a test paragraph This is a test paragraph This is a test
+        paragraph This is a test paragraph This is a test paragraph This is a
+        test paragraph This is a test paragraph This is a test paragraph This is
+        a test paragraph This is a test paragraph This is a test paragraph This
+        is a test paragraph
+      </p>
+      <mat-form-field class="reject-input-container" *ngIf="showRejectContent">
+        <mat-label>Leave a comment</mat-label>
+        <textarea
+          matInput
+          [(ngModel)]="rejectReason"
+          placeholder="please input reject reason"
+        ></textarea>
+      </mat-form-field>
+    </div>
+    <div class="action-items">
+      <button mat-raised-button (click)="cancel()">
+        <mat-icon fontIcon="home"></mat-icon>
+        Cancel
+      </button>
+      <button mat-raised-button color="primary" (click)="accept()">
+        <mat-icon fontIcon="check"></mat-icon>
+        Accept
+      </button>
+      <button mat-raised-button color="warn" (click)="reject()">
+        <mat-icon fontIcon="close"></mat-icon>
+        Reject
+      </button>
+      <button mat-raised-button color="accent" (click)="finish()">
+        <mat-icon fontIcon="done_all"></mat-icon>
+        Finish
+      </button>
+    </div>
+  </div>
+</div>

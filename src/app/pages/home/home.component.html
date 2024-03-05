@@ -5,6 +5,7 @@
       *ngFor="let item of itemList$ | async"
       (click)="checkDetails()"
     >
+      <mat-icon fontIcon="info" class="re-generated" *ngIf="item.reGenerated"></mat-icon>
       <img class="banner" [src]="(item?.photos)![0]" />
       <div class="footer">
         <p class="title">{{ item.name }}</p>

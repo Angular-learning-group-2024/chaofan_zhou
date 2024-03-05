@@ -1,0 +1,24 @@
+<div class="summary-detail">
+  <div class="summary-container">
+    <mat-icon fontIcon="gavel" class="banner"></mat-icon>
+    <h2>You have reviewed {{ totalNumber }} pieces of data in total</h2>
+    <div class="show-info">
+      <div class="summary-item accept">
+        <mat-icon fontIcon="done"></mat-icon>
+        <span>{{ reviewSummary.accept }}</span> Accept
+      </div>
+      <div class="summary-item reject">
+        <mat-icon fontIcon="close"></mat-icon>
+        <span>{{ reviewSummary.reject }}</span> Reject
+      </div>
+    </div>
+    <button
+      mat-stroked-button
+      color="primary"
+      class="confirm-btn"
+      (click)="confirm()"
+    >
+      Confirm
+    </button>
+  </div>
+</div>
