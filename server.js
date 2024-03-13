@@ -39,10 +39,13 @@ app.get('/data', async (req, res) => {
   try {
     // 发出查询请求
     const result = await pool.query(paginatedQuery, [limit, offset]);
+    const filterResult = result.rows.filter((item) => {
+      return item.img_urls[0] !== null
+    })
     res.json({
       page,
       limit,
-      data: result.rows,
+      data: filterResult,
     });
   } catch (error) {
     console.error('Error executing query', error.stack);
