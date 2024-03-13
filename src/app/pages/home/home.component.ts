@@ -5,20 +5,11 @@ import { AsyncPipe } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { DetailsComponent } from './details/details.component';
 import { MatDialog } from '@angular/material/dialog';
-import sourceData from './data';
+import { HttpService } from '../../service/http.service';
+import { Router } from '@angular/router';
+import { Item } from '../../../interfaces';
 
-interface Item {
-  id: number;
-  name: string;
-  photos: string[];
-  content: string;
-  tag: string;
-  nickname: string;
-  avatar: string;
-  starCount: number;
-  favorite: boolean;
-  reGenerated: boolean;
-}
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -27,7 +18,11 @@ interface Item {
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit {
-  constructor(private dialog: MatDialog) {}
+  constructor(
+    private dialog: MatDialog,
+    private http: HttpService,
+    private router: Router
+  ) {}
 
   itemList$ = new BehaviorSubject<Item[]>([]);
 
@@ -36,14 +31,29 @@ export class HomeComponent implements OnInit {
   }
 
   fetchItemList() {
-    this.itemList$.next(sourceData as Item[]);
+    this.http.get('/data').subscribe((res: any) => {
+      const data = res.data.map((item: any) => {
+        return {
+          ...item,
+          tag: '',
+          nickname: 'user',
+          avatar:
+            'https://sns-avatar-qc.xhscdn.com/avatar/1040g2jo30p0p4pj53s005nnkhvggbsn9977q9mg?imageView2/2/w/60/format/webp|imageMogr2/strip',
+          starCount: 100,
+          favorite: false,
+          reGenerated: false,
+        };
+      });
+      this.itemList$.next(data as Item[]);
+    });
   }
 
-  checkDetails() {
-    this.dialog.open(DetailsComponent, {
-      width: '80vw',
-      height: '80vh',
-      disableClose: true,
-    });
+  checkDetails(id: string) {
+    this.router.navigate(['review', id])
+    // this.dialog.open(DetailsComponent, {
+    //   width: '80vw',
+    //   height: '80vh',
+    //   disableClose: true,
+    // });
   }
 }

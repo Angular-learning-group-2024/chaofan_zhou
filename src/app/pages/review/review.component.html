@@ -3,24 +3,15 @@
     <div class="swiper-wrapper">
       <swiper-component
         class="swiper-component"
-        [imageList]="[
-          'https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg',
-          'https://angular.io/assets/images/tutorials/faa/phil-hearing-IYfp2Ixe9nM-unsplash.jpg',
-          'https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg'
-        ]"
+        [imageList]="cardInfo.img_urls"
       />
     </div>
   </div>
   <div class="right-panel">
     <div class="detail-component">
-      <h2>title title title title title title title title</h2>
-      <p>
-        This is a test paragraph This is a test paragraph This is a test
-        paragraph This is a test paragraph This is a test paragraph This is a
-        test paragraph This is a test paragraph This is a test paragraph This is
-        a test paragraph This is a test paragraph This is a test paragraph This
-        is a test paragraph
-      </p>
+      <h2>{{ cardInfo.title }}</h2>
+      <p>{{ cardInfo.content }}</p>
+      <p>{{ cardInfo.updated_at | date : "yyyy-MM-dd hh:mm:ss" }}</p>
       <mat-form-field class="reject-input-container" *ngIf="showRejectContent">
         <mat-label>Leave a comment</mat-label>
         <textarea

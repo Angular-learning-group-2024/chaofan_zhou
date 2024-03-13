@@ -3,18 +3,20 @@
   height: 100%;
   margin: 0 auto;
   min-width: 1440px;
-  overflow: auto;
+  overflow-y: auto;
 
   .list-container {
     padding: 20px;
+    // column-count: 4;
     display: flex;
     flex-flow: column wrap;
     align-content: space-between;
-    height: 2048px;
+    height: 800px;
 
     .list-item {
       position: relative;
       width: 24%;
+      // width: 100%;
       margin-bottom: 10px;
       box-sizing: border-box;
 

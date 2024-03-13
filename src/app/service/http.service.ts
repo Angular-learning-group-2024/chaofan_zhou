@@ -9,7 +9,7 @@ const { baseURL } = environment;
 export class HttpService {
   constructor(private http: HttpClient) {}
 
-  get(api: string, options: Record<string, any>) {
+  get(api: string, options?: Record<string, any>) {
     return this.http
       .get(baseURL + api, {
         headers: new HttpHeaders({
@@ -26,7 +26,7 @@ export class HttpService {
       );
   }
 
-  post(api: string, params: unknown, options: Record<string, any>) {
+  post(api: string, params: unknown, options?: Record<string, any>) {
     return this.http
       .post(baseURL + api, params, {
         headers: new HttpHeaders({

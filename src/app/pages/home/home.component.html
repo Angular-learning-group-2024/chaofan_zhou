@@ -3,12 +3,12 @@
     <div
       class="list-item"
       *ngFor="let item of itemList$ | async"
-      (click)="checkDetails()"
+      (click)="checkDetails(item.id)"
     >
       <mat-icon fontIcon="info" class="re-generated" *ngIf="item.reGenerated"></mat-icon>
-      <img class="banner" [src]="(item?.photos)![0]" />
+      <img class="banner" [src]="(item?.img_urls)![0]" />
       <div class="footer">
-        <p class="title">{{ item.name }}</p>
+        <p class="title">{{ item.title }}</p>
         <div class="card-info">
           <img [src]="item?.avatar" />
           <span>{{ item.nickname }}</span>

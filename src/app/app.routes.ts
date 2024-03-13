@@ -7,7 +7,7 @@ export const routes: Routes = [
       import('./pages/home/home.component').then((m) => m.HomeComponent),
   },
   {
-    path: 'review',
+    path: 'review/:id',
     loadComponent: () =>
       import('./pages/review/review.component').then((m) => m.ReviewComponent),
   },
