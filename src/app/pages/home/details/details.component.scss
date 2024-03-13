@@ -1,0 +1,42 @@
+.details-dialog {
+  position: relative;
+  height: 100%;
+
+  .icon-close {
+    position: fixed;
+    top: calc(10vh + 20px);
+    left: 5vw;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    color: #fff;
+    z-index: 9999;
+    background-color: rgba(64, 64, 64, 0.25);
+    backdrop-filter: saturate(150%) blur(10px);
+  }
+
+  .left-panel {
+    display: inline-block;
+    width: calc(100% - 300px);
+  }
+
+  .right-panel {
+    display: inline-block;
+    vertical-align: top;
+    width: 300px;
+    box-sizing: border-box;
+    padding: 0 20px;
+
+    .topic-container {
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .comment-container {
+      padding: 20px 0;
+    }
+  }
+}

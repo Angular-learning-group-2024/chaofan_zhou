@@ -1,0 +1,32 @@
+<div class="home-container">
+  <div class="list-container">
+    <div
+      class="list-item"
+      *ngFor="let item of itemList$ | async"
+      (click)="checkDetails(item.id)"
+    >
+      <mat-icon fontIcon="info" class="re-generated" *ngIf="item.reGenerated"></mat-icon>
+      <img class="banner" [src]="(item?.img_urls)![0]" />
+      <div class="footer">
+        <p class="title">{{ item.title }}</p>
+        <div class="card-info">
+          <img [src]="item?.avatar" />
+          <span>{{ item.nickname }}</span>
+          <div class="star">
+            <mat-icon
+              *ngIf="item.favorite; else notFavorite"
+              fontIcon="favorite"
+            ></mat-icon>
+            <ng-template #notFavorite>
+              <mat-icon fontIcon="favorite_border"></mat-icon>
+            </ng-template>
+            <span>{{ item.starCount }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span class="list-item break"></span>
+    <span class="list-item break"></span>
+    <span class="list-item break"></span>
+  </div>
+</div>
