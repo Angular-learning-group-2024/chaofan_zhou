@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { canReview } from './shared/guards/canReview';
 
 export const routes: Routes = [
   {
@@ -8,6 +9,7 @@ export const routes: Routes = [
   },
   {
     path: 'review/:id',
+    canActivate: [canReview],
     loadComponent: () =>
       import('./pages/review/review.component').then((m) => m.ReviewComponent),
   },
