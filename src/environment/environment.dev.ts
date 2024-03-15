@@ -1,3 +1,4 @@
 export const environment = {
-  baseURL: 'http://localhost:3001'
+  baseURL: 'http://4.180.30.132:3001',
+  
 }
