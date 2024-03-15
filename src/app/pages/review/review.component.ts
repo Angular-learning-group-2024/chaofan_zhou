@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { SwiperComponent } from '../../components/swiper/swiper.component';
 import { HttpService } from '../../service/http.service';
 import { Item } from '../../../interfaces';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-review',
@@ -28,7 +29,8 @@ export class ReviewComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private http: HttpService
+    private http: HttpService,
+    private auth: AuthService
   ) {}
 
   cardInfo: Item = {
@@ -79,7 +81,9 @@ export class ReviewComponent implements OnInit {
     this.router.navigate(['']);
   }
 
-  accept() {}
+  accept() {
+    this.auth.loginWithRedirect();
+  }
 
   reject() {
     this.showRejectContent = true;
