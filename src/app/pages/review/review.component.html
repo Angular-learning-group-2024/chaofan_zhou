@@ -1,4 +1,4 @@
-<div class="review-details">
+<!-- <div class="review-details">
   <div class="left-panel">
     <div class="swiper-wrapper">
       <swiper-component
@@ -37,6 +37,42 @@
       <button mat-raised-button color="accent" (click)="finish()">
         <mat-icon fontIcon="done_all"></mat-icon>
         Finish
+      </button>
+    </div>
+  </div>
+</div> -->
+
+<div class="flex p-4 flex-col xl:flex-row">
+  <div class="xl:w-2/4 w-full">
+    <div>
+      <swiper-component
+        class="swiper-component"
+        [imageList]="cardInfo.img_urls"
+      />
+    </div>
+  </div>
+  <div class="xl:w-2/4 pl-4 flex flex-col">
+    <div>
+      <h2>{{ cardInfo.title }}</h2>
+      <p>{{ cardInfo.content }}</p>
+      <p>{{ cardInfo.updated_at | date : "yyyy-MM-dd hh:mm:ss" }}</p>
+      <mat-form-field class="reject-input-container" *ngIf="showRejectContent">
+        <mat-label>Leave a comment</mat-label>
+        <textarea
+          matInput
+          [(ngModel)]="rejectReason"
+          placeholder="please input reject reason"
+        ></textarea>
+      </mat-form-field>
+    </div>
+    <div class="mt-auto">
+      <button mat-raised-button color="primary" class="mr-5" (click)="accept()">
+        <mat-icon fontIcon="check"></mat-icon>
+        Accept
+      </button>
+      <button mat-raised-button color="warn" (click)="reject()">
+        <mat-icon fontIcon="close"></mat-icon>
+        Reject
       </button>
     </div>
   </div>
