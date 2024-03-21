@@ -1,48 +1,48 @@
-.review-details {
-  padding: 20px;
-  height: 100%;
-  max-width: 90%;
-  margin: 0 auto;
+// .review-details {
+//   padding: 20px;
+//   height: 100%;
+//   max-width: 90%;
+//   margin: 0 auto;
 
-  .left-panel {
-    box-sizing: border-box;
-    display: inline-block;
-    width: 60%;
-    height: calc(100% - 40px);
+//   .left-panel {
+//     box-sizing: border-box;
+//     display: inline-block;
+//     width: 60%;
+//     height: calc(100% - 40px);
 
-    .swiper-wrapper {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+//     .swiper-wrapper {
+//       height: 100%;
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
 
-      .swiper-component {
-        flex: 1;
-      }
-    }
-  }
+//       .swiper-component {
+//         flex: 1;
+//       }
+//     }
+//   }
 
-  .right-panel {
-    display: inline-flex;
-    flex-direction: column;
-    vertical-align: top;
-    box-sizing: border-box;
-    width: 40%;
-    height: calc(100% - 40px);
-    padding-left: 40px;
+//   .right-panel {
+//     display: inline-flex;
+//     flex-direction: column;
+//     vertical-align: top;
+//     box-sizing: border-box;
+//     width: 40%;
+//     height: calc(100% - 40px);
+//     padding-left: 40px;
 
-    .reject-input-container {
-      width: 100%;
+//     .reject-input-container {
+//       width: 100%;
 
-      textarea {
-        height: 200px;
-      }
-    }
+//       textarea {
+//         height: 200px;
+//       }
+//     }
 
-    .action-items {
-      display: flex;
-      justify-content: space-between;
-      margin-top: auto;
-    }
-  }
-}
+//     .action-items {
+//       display: flex;
+//       justify-content: space-between;
+//       margin-top: auto;
+//     }
+//   }
+// }

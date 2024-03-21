@@ -1,4 +1,4 @@
-<div class="home-container container sm">
+<!-- <div class="home-container">
   <div class="list-container">
     <div
       class="list-item"
@@ -25,8 +25,48 @@
         </div>
       </div>
     </div>
-    <!-- <span class="list-item break"></span> -->
-    <!-- <span class="list-item break"></span> -->
-    <!-- <span class="list-item break"></span> -->
+    <span class="list-item break"></span>
+    <span class="list-item break"></span>
+    <span class="list-item break"></span>
+  </div>
+</div> -->
+
+<div class="container mx-auto overflow-y-auto p-4 xl:px-0">
+  <div class="columns-2 xl:columns-4">
+    <div
+      class="mb-5"
+      *ngFor="let item of itemList$ | async"
+      (click)="checkDetails(item.id)"
+      style="page-break-inside: avoid;"
+    >
+      <mat-icon
+        fontIcon="info"
+        class="re-generated"
+        *ngIf="item.reGenerated"
+      ></mat-icon>
+      <img
+        class="w-full aspect-auto rounded-2xl"
+        [src]="(item?.img_urls)![0]"
+      />
+      <div>
+        <p class="text-base" style="margin: 7px 0 2px 0 !important">
+          {{ item.title }}
+        </p>
+        <div class="flex flex-row items-center">
+          <img [src]="item?.avatar" class="w-7 h-7 rounded-full" />
+          <span class="ml-2">{{ item.nickname }}</span>
+          <div class="flex flex-row items-center ml-auto">
+            <mat-icon
+              *ngIf="item.favorite; else notFavorite"
+              fontIcon="favorite"
+            ></mat-icon>
+            <ng-template #notFavorite>
+              <mat-icon fontIcon="favorite_border"></mat-icon>
+            </ng-template>
+            <span>{{ item.starCount }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

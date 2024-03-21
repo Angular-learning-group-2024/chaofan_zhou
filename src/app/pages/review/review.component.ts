@@ -77,10 +77,6 @@ export class ReviewComponent implements OnInit {
     });
   }
 
-  cancel() {
-    this.router.navigate(['']);
-  }
-
   accept() {
     this.auth.loginWithRedirect();
   }
@@ -88,10 +84,5 @@ export class ReviewComponent implements OnInit {
   reject() {
     this.showRejectContent = true;
     this.rejectReason = '';
-  }
-
-  finish() {
-    const { accept, reject } = this.reviewSummary;
-    this.router.navigate(['/finish'], { queryParams: { accept, reject } });
   }
 }
